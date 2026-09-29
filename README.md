@@ -7,7 +7,7 @@ CIS-2232 Advanced Object-Oriented Programming
 **Repository:** `cis2232_f26_project_villanueva_jose_bottledrive`
 **Application name:** `bottledrive`
 **Base colour:** Sea green (#2E8B57)
-**Server port:** `8080`
+
 
 ## Development team
 
