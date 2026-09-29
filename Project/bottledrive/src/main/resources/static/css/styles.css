@@ -5,14 +5,12 @@ html{
 }
 
 :root {
-    /*Variable for team color*/
-    /*light ac3e37 main 770711 dark 470000*/
-    --main-color-light: #ac3e37;
-    --main-color-primary: #770711;
-    --main-color-dark: #470000;
-    --main-color-text: #ac3e37;
-    --main-color-bright: #ffffff;
-
+    /* Base colour specified by the BA: Sea green */
+    --main-color-light: #E8F5EE;
+    --main-color-primary: #2E8B57;
+    --main-color-dark: #2E8B57;
+    --main-color-text: #FFFFFF;
+    --main-color-bright: #173D29;
 }
 
 /*input:not(.hidden){

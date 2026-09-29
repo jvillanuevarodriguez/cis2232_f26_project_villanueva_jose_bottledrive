@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>info.hccis</groupId>
-    <artifactId>performance_hall</artifactId>
+    <artifactId>bottledrive</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>performance_hall</name>
+    <name>bottledrive</name>
     <description>Sample Application</description>
 
     <packaging>jar</packaging>
