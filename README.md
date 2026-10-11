@@ -72,3 +72,28 @@ All three amounts are rounded to two decimal places and stored with the donation
 GitHub is used to store the project code and track work through Issues. The repository should be public so the instructor and project team can access it.
 
 Repository: [Bottle Drive Log](https://github.com/jvillanuevarodriguez/cis2232_f26_project_villanueva_jose_bottledrive)
+
+## Repository organization
+
+| Deliverable | Description | Location |
+|---|---|---|
+| Assignment 1 | Console application with file storage. | [Assignment 1](Assignment/cis2232_a1_villanueva_jose/) |
+| Assignment 2 | Business calculation with TDD and JUnit tests, including AI-generated tests. | [Assignment 2](Assignment/cis2232_f26_assignment2_bottledrive/) |
+| Assignment 3 | Console and JOptionPane threads sharing donation data. | [Assignment 3](Assignment/cis2232_f26_assignment3_bottledrive/) |
+| Course project | Web application for continued development. | [Project](Project/bottledrive/) |
+| Sprint 1 | Saved copy of the initial web application. | [Sprint 1](Sprint/Sprint1/bottledrive/) |
+| Project requirements | Topic document provided by the BA. | [Requirements](Project/Project_Topic_Document_Pitre_Kay.docx) |
+
+## Sprint 1 — Initial web application
+
+Sprint 1 has been completed and graded.
+
+The deliverables included:
+- The README with project information and required fields.
+- The project colour specified by the BA.
+- The application name and server port 8080.
+- The createDatabase.sql script.
+
+A copy is stored in `Sprint/Sprint1/bottledrive`.
+Development for later sprints will continue in `Project/bottledrive`.
+Copies of future sprint submissions will be added to the `Sprint` folder.
