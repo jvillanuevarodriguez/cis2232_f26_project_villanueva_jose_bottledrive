@@ -63,8 +63,20 @@ All three amounts are rounded to two decimal places and stored with the donation
 
 ## Report requirements
 
-- Total refund collected across a selected date range.
-- Refund totals by depositor, so repeat contributors can be recognized.
+### Report by date
+The user enters a start date and an end date. The report will show the donations within that range, including both dates, and the total refund collected.
+
+A chart will show the total refund for each day.
+
+### Report by depositor
+The user enters a depositor's name. The report will show their donations and the total refund they have contributed.
+
+### Report output
+Both reports will show the donation dates, depositor names, container counts, and refund amounts.
+
+The reports will use JDBC and DAO classes to get the data. Results will appear on the page and will also be saved to a text file in C:\cis2232\. The filename will include the report type and the current date and time.
+
+If no donations match, the page will show a message saying no results were found.
   
 
 ## Version control
