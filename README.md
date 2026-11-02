@@ -108,3 +108,26 @@ The deliverables included:
 The Sprint 1 web application is stored in `Sprint/Sprint1/bottledrive`.
 The BA's topic document is stored in `Project`.
 Future sprint submissions will be organized under the `Sprint` folder.
+
+## Sprint 2 — Reports
+
+The Sprint 2 application is stored in `Sprint/Sprint2/bottledrive`.
+
+This sprint includes:
+- Reports by date range and depositor name using JDBC.
+- Total refunds for each report.
+- A chart showing refund totals by day.
+- Text reports saved in `C:\cis2232`.
+- Messages for invalid date ranges and no results.
+
+### Developer testing
+
+| Test | Result |
+|---|---|
+| October 20–21: three donations, total $10.00 | Passed |
+| October 20 only: one donation, total $2.00 | Passed |
+| Start date after end date: validation message shown | Passed |
+| Test Donor: two donations, total $6.00 | Passed |
+| Unknown depositor: no results and $0.00 in the text file | Passed |
+| Daily chart: $2.00 on October 20 and $8.00 on October 21 | Passed |
+| Both reports saved to text files | Passed |
