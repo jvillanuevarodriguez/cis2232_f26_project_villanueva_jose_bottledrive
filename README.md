@@ -4,8 +4,8 @@ CIS-2232 Advanced Object-Oriented Programming
 
 ## Project
 
-**Repository:** `cis2232_f26_project_villanueva_jose_bottledrive`
-**Application name:** `bottledrive`
+**Repository:** cis2232_f26_project_villanueva_jose_bottledrive
+**Application name:** bottledrive
 **Base colour:** Sea green (#2E8B57)
 
 
@@ -27,7 +27,7 @@ One record represents one donation received on one date. It includes the deposit
 
 ## Fields captured
 
-One database table: `bottle_donation`.
+One database table: bottle_donation.
 
 | Field | Type | Description |
 |---|---|---|
@@ -105,19 +105,19 @@ The deliverables included:
 - The application name and server port 8080.
 - The createDatabase.sql script.
 
-The Sprint 1 web application is stored in `Sprint/Sprint1/bottledrive`.
-The BA's topic document is stored in `Project`.
-Future sprint submissions will be organized under the `Sprint` folder.
+The Sprint 1 web application is stored in Sprint/Sprint1/bottledrive.
+The BA's topic document is stored in Project.
+Future sprint submissions will be organized under the Sprint folder.
 
 ## Sprint 2 — Reports
 
-The Sprint 2 application is stored in `Sprint/Sprint2/bottledrive`.
+The Sprint 2 application is stored in Sprint/Sprint2/bottledrive.
 
 This sprint includes:
 - Reports by date range and depositor name using JDBC.
 - Total refunds for each report.
 - A chart showing refund totals by day.
-- Text reports saved in `C:\cis2232`.
+- Text reports saved in C:\cis2232.
 - Messages for invalid date ranges and no results.
 
 ### Developer testing
