@@ -93,6 +93,7 @@ Repository: [Bottle Drive Log](https://github.com/jvillanuevarodriguez/cis2232_f
 | Assignment 2 | Business calculation with TDD and JUnit tests, including AI-generated tests. | [Assignment 2](Assignment/cis2232_f26_assignment2_bottledrive/) |
 | Assignment 3 | Console and JOptionPane threads sharing donation data. | [Assignment 3](Assignment/cis2232_f26_assignment3_bottledrive/) |
 | Sprint 1 | Initial version of the Bottle Drive web application. | [Sprint 1](Sprint/Sprint1/bottledrive/) |
+| Sprint 2 | Donation reports, daily chart, and text file output. | [Sprint 2](Sprint/Sprint2/bottledrive/) |
 | Project requirements | Topic document provided by the BA. | [Requirements](Project/Project_Topic_Document_Pitre_Kay.docx) |
 
 ## Sprint 1 — Initial web application
