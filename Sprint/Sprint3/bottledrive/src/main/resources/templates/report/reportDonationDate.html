@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head :: head">
+    <title id="pageTitle">Donations by date</title>
+</head>
+<body>
+<nav th:replace="fragments/navHeader :: navbar"></nav>
+
+<div class="container has-text-centered">
+    <h2 class="title is-2">Donations by date</h2>
+
+    <form th:action="@{/report/donation/date/submit}"
+          th:object="${reportInput}"
+          method="post"
+          class="wbb"
+          style="display:inline-block; text-align:left;">
+
+        <p>
+            <label for="dateStart">Start date:</label>
+            <input type="date" id="dateStart" th:field="*{dateStart}" required>
+        </p>
+
+        <p>
+            <label for="dateEnd">End date:</label>
+            <input type="date" id="dateEnd" th:field="*{dateEnd}" required>
+        </p>
+
+        <button type="submit">Run report</button>
+    </form>
+
+    <p th:if="${message != null}" th:text="${message}"></p>
+    <p th:if="${fileMessage != null}" th:text="${fileMessage}"></p>
+
+    <div th:if="${not #lists.isEmpty(reportInput.donations)}"
+         style="overflow-x:auto; margin-top:20px;">
+
+        <table class="wbb centered donation-report">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Donation date</th>
+                <th>Depositor</th>
+                <th>Small containers</th>
+                <th>Large containers</th>
+                <th>Small rate</th>
+                <th>Large rate</th>
+                <th>Small refund</th>
+                <th>Large refund</th>
+                <th>Total refund</th>
+            </tr>
+            </thead>
+
+            <tbody>
+
+            <tr th:each="donation : ${reportInput.donations}">
+                <td th:text="${donation.id}"></td>
+                <td th:text="${donation.donationDate}"></td>
+                <td th:text="${donation.depositorName}"></td>
+                <td th:text="${donation.smallContainerCount}"></td>
+                <td th:text="${donation.largeContainerCount}"></td>
+                <td th:text="'$' + ${#numbers.formatDecimal(donation.smallContainerRate, 1, 2)}"></td>
+                <td th:text="'$' + ${#numbers.formatDecimal(donation.largeContainerRate, 1, 2)}"></td>
+                <td th:text="'$' + ${#numbers.formatDecimal(donation.smallRefund, 1, 2)}"></td>
+                <td th:text="'$' + ${#numbers.formatDecimal(donation.largeRefund, 1, 2)}"></td>
+                <td th:text="'$' + ${#numbers.formatDecimal(donation.totalRefund, 1, 2)}"></td>
+            </tr>
+            </tbody>
+
+        </table>
+
+        <p>
+            <strong>Total collected:</strong>
+            <span th:text="'$' + ${#numbers.formatDecimal(reportInput.totalRefund, 1, 2)}"></span>
+        </p>
+        <h3 class="title is-4">Refund totals by day</h3>
+
+        <div style="max-width:700px; margin:20px auto;">
+            <canvas id="dailyRefundChart"
+                    role="img"
+                    aria-label="Total refunds by donation date"></canvas>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+
+        <script th:inline="javascript">
+            const dailyTotals = /*[[${reportInput.dailyTotals}]]*/ {};
+
+            new Chart(document.getElementById('dailyRefundChart'), {
+                type: 'bar',
+                data: {
+                    labels: Object.keys(dailyTotals),
+                    datasets: [{
+                        label: 'Total refund (CAD)',
+                        data: Object.values(dailyTotals),
+                        backgroundColor: '#2E8B57'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Refund total (CAD)'
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Donation date'
+                            }
+                        }
+                    }
+                }
+            });
+        </script>
+    </div>
+
+    <p><a th:href="@{/report}">Back to reports</a></p>
+</div>
+
+<footer th:replace="fragments/footer :: footer"></footer>
+</body>
+</html>

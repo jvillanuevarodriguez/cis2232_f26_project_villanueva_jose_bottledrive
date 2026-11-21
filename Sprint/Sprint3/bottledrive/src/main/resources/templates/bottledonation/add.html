@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Bottle Donation</title>
+</head>
+<body>
+<h1 th:text="${bottleDonation.id == 0} ? 'Add a donation' : 'Edit a donation'">
+    Bottle Donation
+</h1>
+
+<form th:action="@{/bottledonation/submit}"
+      th:object="${bottleDonation}"
+      method="post">
+
+    <input type="hidden" th:field="*{id}">
+
+    <p>
+        <label for="depositorName">Depositor name:</label>
+        <input id="depositorName" type="text" th:field="*{depositorName}">
+        <span th:if="${#fields.hasErrors('depositorName')}"
+              th:errors="*{depositorName}"></span>
+    </p>
+
+    <p>
+        <label for="donationDate">Donation date:</label>
+        <input id="donationDate" type="date" th:field="*{donationDate}">
+        <span th:if="${#fields.hasErrors('donationDate')}"
+              th:errors="*{donationDate}"></span>
+    </p>
+
+    <p>
+        <label for="smallContainerCount">Small containers:</label>
+        <input id="smallContainerCount" type="number" min="0"
+               th:field="*{smallContainerCount}">
+        <span th:if="${#fields.hasErrors('smallContainerCount')}"
+              th:errors="*{smallContainerCount}"></span>
+    </p>
+
+    <p>
+        <label for="largeContainerCount">Large containers:</label>
+        <input id="largeContainerCount" type="number" min="0"
+               th:field="*{largeContainerCount}">
+        <span th:if="${#fields.hasErrors('largeContainerCount')}"
+              th:errors="*{largeContainerCount}"></span>
+    </p>
+
+    <p th:if="${#fields.hasErrors('atLeastOneContainer')}"
+       th:errors="*{atLeastOneContainer}"></p>
+
+    <p>
+        <label for="smallContainerRate">Small container rate:</label>
+        <input id="smallContainerRate" type="number" min="0.01" step="0.01"
+               th:field="*{smallContainerRate}">
+        <span th:if="${#fields.hasErrors('smallContainerRate')}"
+              th:errors="*{smallContainerRate}"></span>
+    </p>
+
+    <p>
+        <label for="largeContainerRate">Large container rate:</label>
+        <input id="largeContainerRate" type="number" min="0.01" step="0.01"
+               th:field="*{largeContainerRate}">
+        <span th:if="${#fields.hasErrors('largeContainerRate')}"
+              th:errors="*{largeContainerRate}"></span>
+    </p>
+
+    <p>
+        <label for="notes">Notes:</label>
+        <textarea id="notes" th:field="*{notes}"></textarea>
+    </p>
+
+    <button type="submit">Save donation</button>
+    <a th:href="@{/bottledonation}">Cancel</a>
+</form>
+</body>
+</html>

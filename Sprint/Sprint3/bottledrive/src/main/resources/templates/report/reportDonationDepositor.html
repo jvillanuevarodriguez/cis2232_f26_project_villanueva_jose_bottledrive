@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head :: head">
+    <title id="pageTitle">Donations by depositor</title>
+</head>
+<body>
+<nav th:replace="fragments/navHeader :: navbar"></nav>
+
+<div class="container has-text-centered">
+    <h2 class="title is-2">Donations by depositor</h2>
+
+    <form th:action="@{/report/donation/depositor/submit}"
+          th:object="${reportInput}"
+          method="post"
+          class="wbb"
+          style="display:inline-block; text-align:left;">
+
+        <p>
+            <label for="depositorName">Depositor name:</label>
+            <input type="text" id="depositorName"
+                   th:field="*{depositorName}" maxlength="100" required>
+        </p>
+
+        <button type="submit">Run report</button>
+    </form>
+
+    <p th:if="${message != null}" th:text="${message}"></p>
+    <p th:if="${fileMessage != null}" th:text="${fileMessage}"></p>
+
+    <div th:if="${not #lists.isEmpty(reportInput.donations)}"
+         style="overflow-x:auto; margin-top:20px;">
+
+        <table class="wbb centered donation-report">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Donation date</th>
+                <th>Depositor</th>
+                <th>Small containers</th>
+                <th>Large containers</th>
+                <th>Small rate</th>
+                <th>Large rate</th>
+                <th>Small refund</th>
+                <th>Large refund</th>
+                <th>Total refund</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr th:each="donation : ${reportInput.donations}">
+                <td th:text="${donation.id}"></td>
+                <td th:text="${donation.donationDate}"></td>
+                <td th:text="${donation.depositorName}"></td>
+                <td th:text="${donation.smallContainerCount}"></td>
+                <td th:text="${donation.largeContainerCount}"></td>
+                <td th:text="'$' + ${#numbers.formatDecimal(donation.smallContainerRate, 1, 2)}"></td>
+                <td th:text="'$' + ${#numbers.formatDecimal(donation.largeContainerRate, 1, 2)}"></td>
+                <td th:text="'$' + ${#numbers.formatDecimal(donation.smallRefund, 1, 2)}"></td>
+                <td th:text="'$' + ${#numbers.formatDecimal(donation.largeRefund, 1, 2)}"></td>
+                <td th:text="'$' + ${#numbers.formatDecimal(donation.totalRefund, 1, 2)}"></td>
+            </tr>
+            </tbody>
+        </table>
+
+        <p>
+            <strong>Total collected:</strong>
+            <span th:text="'$' + ${#numbers.formatDecimal(reportInput.totalRefund, 1, 2)}"></span>
+        </p>
+    </div>
+
+    <p><a th:href="@{/report}">Back to reports</a></p>
+</div>
+
+<footer th:replace="fragments/footer :: footer"></footer>
+</body>
+</html>

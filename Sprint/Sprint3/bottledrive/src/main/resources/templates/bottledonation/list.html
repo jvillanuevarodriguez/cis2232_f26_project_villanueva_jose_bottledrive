@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Bottle Donations</title>
+</head>
+<body>
+<h1>Bottle Donations</h1>
+
+<p>
+    <a th:href="@{/bottledonation/add}">Add a donation</a>
+</p>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Donation date</th>
+        <th>Depositor</th>
+        <th>Small containers</th>
+        <th>Large containers</th>
+        <th>Small refund</th>
+        <th>Large refund</th>
+        <th>Total refund</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="donation : ${bottleDonations}">
+        <td th:text="${donation.id}"></td>
+        <td th:text="${donation.donationDate}"></td>
+        <td th:text="${donation.depositorName}"></td>
+        <td th:text="${donation.smallContainerCount}"></td>
+        <td th:text="${donation.largeContainerCount}"></td>
+        <td th:text="${donation.smallRefund}"></td>
+        <td th:text="${donation.largeRefund}"></td>
+        <td th:text="${donation.totalRefund}"></td>
+        <td>
+            <a th:href="@{/bottledonation/edit/{id}(id=${donation.id})}">Edit</a>
+            |
+            <a th:href="@{/bottledonation/delete/{id}(id=${donation.id})}"
+               onclick="return confirm('Delete this donation?');">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
