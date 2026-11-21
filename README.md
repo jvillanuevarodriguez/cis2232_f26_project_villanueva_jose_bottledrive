@@ -132,3 +132,33 @@ This sprint includes:
 | Unknown depositor: no results and $0.00 in the text file | Passed |
 | Daily chart: $2.00 on October 20 and $8.00 on October 21 | Passed |
 | Both reports saved to text files | Passed |
+
+## Sprint 3 — MVC CRUD with Spring Data JPA and Validation
+
+The Bottle Drive Log application provides CRUD functionality for bottle donations using Spring MVC and Spring Data JPA.
+
+### Functionality
+
+- List all bottle donations.
+- Add a donation.
+- Edit an existing donation.
+- Delete a donation.
+- Calculate small, large, and total refunds when a donation is saved.
+- Display validation messages for invalid input.
+
+### Validation rules
+
+- Depositor name is required.
+- Donation date is required.
+- Container counts must be zero or greater.
+- At least one container count must be greater than zero.
+- Container rates must be greater than zero.
+
+### Refund calculation
+
+- Small refund = small container count × small container rate
+- Large refund = large container count × large container rate
+- Total refund = small refund + large refund
+
+Refund amounts are rounded to two decimal places and saved with the donation.
+
