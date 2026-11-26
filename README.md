@@ -94,6 +94,7 @@ Repository: [Bottle Drive Log](https://github.com/jvillanuevarodriguez/cis2232_f
 | Assignment 3 | Console and JOptionPane threads sharing donation data. | [Assignment 3](Assignment/cis2232_f26_assignment3_bottledrive/) |
 | Sprint 1 | Initial version of the Bottle Drive web application. | [Sprint 1](Sprint/Sprint1/bottledrive/) |
 | Sprint 2 | Donation reports, daily chart, and text file output. | [Sprint 2](Sprint/Sprint2/bottledrive/) |
+| Sprint 3 | Donation list, add, edit, and delete forms with Spring Data JPA and validation. | [Sprint 3](Sprint/Sprint3/bottledrive) |
 | Project requirements | Topic document provided by the BA. | [Requirements](Project/Project_Topic_Document_Pitre_Kay.docx) |
 
 ## Sprint 1 — Initial web application
@@ -108,7 +109,7 @@ The deliverables included:
 
 The Sprint 1 web application is stored in Sprint/Sprint1/bottledrive.
 The BA's topic document is stored in Project.
-Future sprint submissions will be organized under the Sprint folder.
+Starting with Sprint 4, development will continue in the same application at `Sprint/Sprint3/bottledrive`. GitHub commits will track changes between sprints.
 
 ## Sprint 2 — Reports
 
@@ -161,4 +162,16 @@ The Bottle Drive Log application provides CRUD functionality for bottle donation
 - Total refund = small refund + large refund
 
 Refund amounts are rounded to two decimal places and saved with the donation.
+
+### Running the application
+
+1. Start MySQL.
+2. For a fresh installation, run [createDatabase.sql](Sprint/Sprint3/bottledrive/src/main/resources/db/mysql/createDatabase.sql) once. It creates the `cis2232_bottledrive` database, the `bottle_donation` table, and five sample donations.
+3. Open `Sprint/Sprint3/bottledrive` in IntelliJ and run `TheApplication`.
+4. Open http://localhost:8080/ in a browser.
+5. From the main menu, select **Bottle Donations → View donations**. The list, add, and edit pages use the application's shared navigation and styling.
+
+### Sample data check
+
+Tested the setup script in an empty database using phpMyAdmin. It loaded five donations dated November 20–24, 2026, with a combined refund of $183.50.
 
