@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Bottle Donations</title>
-</head>
+<head th:replace="fragments/head :: headerFragment"></head>
 <body>
-<h1>Bottle Donations</h1>
+<nav th:replace="fragments/navHeader :: navbar"></nav>
+
+<main class="section container">
+    <h1 class="title">Bottle Donations</h1>
 
 <p>
     <a th:href="@{/bottledonation/add}">Add a donation</a>
 </p>
 
-<table border="1">
+    <div class="table-container">
+        <table class="table is-striped is-fullwidth">
     <thead>
     <tr>
         <th>ID</th>
@@ -43,6 +44,10 @@
         </td>
     </tr>
     </tbody>
-</table>
+        </table>
+    </div>
+</main>
+
+<footer th:replace="fragments/footer :: footer"></footer>
 </body>
 </html>

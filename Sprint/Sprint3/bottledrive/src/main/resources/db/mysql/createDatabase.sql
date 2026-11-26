@@ -42,3 +42,20 @@ CREATE TABLE bottle_donation (
 
                                  PRIMARY KEY (id)
 ) COMMENT = 'Donations received during a fundraising bottle drive';
+
+INSERT INTO bottle_donation (
+    depositorName, donationDate,
+    smallContainerCount, largeContainerCount,
+    smallContainerRate, largeContainerRate,
+    smallRefund, largeRefund, totalRefund, notes
+) VALUES
+      ('John Smith', '2026-11-20', 100, 50, 0.10, 0.20,
+       10.00, 10.00, 20.00, 'First donation of the season'),
+      ('Mary Jones', '2026-11-21', 250, 100, 0.10, 0.20,
+       25.00, 20.00, 45.00, 'Large family donation'),
+      ('Robert Brown', '2026-11-22', 75, 25, 0.10, 0.20,
+       7.50, 5.00, 12.50, 'Regular weekly donation'),
+      ('Susan MacDonald', '2026-11-23', 500, 200, 0.10, 0.20,
+       50.00, 40.00, 90.00, 'Community fundraising collection'),
+      ('David Wilson', '2026-11-24', 40, 60, 0.10, 0.20,
+       4.00, 12.00, 16.00, NULL);

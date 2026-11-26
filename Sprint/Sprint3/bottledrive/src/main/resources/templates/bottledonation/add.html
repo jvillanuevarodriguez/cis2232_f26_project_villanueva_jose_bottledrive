@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Bottle Donation</title>
-</head>
+<head th:replace="fragments/head :: headerFragment"></head>
 <body>
-<h1 th:text="${bottleDonation.id == 0} ? 'Add a donation' : 'Edit a donation'">
-    Bottle Donation
-</h1>
+<nav th:replace="fragments/navHeader :: navbar"></nav>
 
-<form th:action="@{/bottledonation/submit}"
-      th:object="${bottleDonation}"
-      method="post">
+<main class="section container">
+    <h1 class="title"
+        th:text="${bottleDonation.id == 0} ? 'Add a donation' : 'Edit a donation'">
+        Bottle Donation
+    </h1>
+
+    <form class="box"
+          th:action="@{/bottledonation/submit}"
+          th:object="${bottleDonation}"
+          method="post">
 
     <input type="hidden" th:field="*{id}">
 
@@ -71,6 +73,9 @@
 
     <button type="submit">Save donation</button>
     <a th:href="@{/bottledonation}">Cancel</a>
-</form>
+    </form>
+</main>
+
+<footer th:replace="fragments/footer :: footer"></footer>
 </body>
 </html>

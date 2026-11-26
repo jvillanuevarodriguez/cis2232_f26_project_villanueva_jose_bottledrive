@@ -323,3 +323,26 @@ Arrange invoice list tittle and add button
     padding: 8px 12px !important;
     text-align: left;
 }
+/* Direct links on the green navigation bar, such as About */
+.navbar.nav .navbar-end > a.navbar-item {
+    background-color: #2e8b57;
+    color: #fff !important;
+}
+
+.navbar.nav .navbar-end > a.navbar-item:hover,
+.navbar.nav .navbar-end > a.navbar-item:focus {
+    background-color: #205f3d;
+    text-decoration: underline;
+}
+
+/* Links inside the white dropdowns, including previously visited links */
+.navbar.nav .navbar-dropdown a.navbar-item {
+    background-color: #fff;
+    color: #174c35 !important;
+}
+
+.navbar.nav .navbar-dropdown a.navbar-item:hover,
+.navbar.nav .navbar-dropdown a.navbar-item:focus {
+    background-color: #e7f3ec;
+    text-decoration: underline;
+}

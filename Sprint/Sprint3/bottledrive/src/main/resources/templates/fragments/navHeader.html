@@ -5,7 +5,7 @@
     <nav th:fragment="navbar" class="navbar nav" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a th:href="@{/}" class="vert-align">
-                <img src="/images/ic_launcher.png" class="logo"></span>
+                <img th:src="@{/images/ic_launcher.png}" class="logo" alt="Bottle Drive Log">
             </a>
 
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" id="burg"
@@ -18,34 +18,23 @@
         </div>
         <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-end">
+
                 <div class="navbar-item has-dropdown is-hoverable">
-                    <a th:href="@{/ticketorder}" href="/about" class=" navbar-link">Tickets</a>
+                    <a th:href="@{/bottledonation}" class="navbar-link">Bottle Donations</a>
                     <div class="navbar-dropdown">
-                        <a th:href="@{/ticketorder}" class="navbar-item">View</a>
-                        <hr class="navbar-divider">                            
+                        <a th:href="@{/bottledonation}" class="navbar-item">View donations</a>
                     </div>
                 </div>
-            <div class="navbar-end">
+
                 <div class="navbar-item has-dropdown is-hoverable">
-                    <a th:href="@{/report}" href="/about" class=" navbar-link">Reports</a>
+                    <a th:href="@{/report}" class="navbar-link">Reports</a>
                     <div class="navbar-dropdown">
-                        <a th:href="@{/report/order/dateoforder}" class="navbar-item">Order date</a>
-                        <a th:href="@{/report/order/customername}" class="navbar-item">Customer name</a>
-                        <hr class="navbar-divider">                            
+                        <a th:href="@{/report/donation/date}" class="navbar-item">Donations by date</a>
+                        <a th:href="@{/report/donation/depositor}" class="navbar-item">Donations by depositor</a>
                     </div>
                 </div>
-<!--                <div class="navbar-item has-dropdown is-hoverable">
-                    <p class=" navbar-link">Sample 2</p>
-                    <div class="navbar-dropdown">
-                        <a th:href="@{/about}" class="navbar-item">B</a>
-                        <hr class="navbar-divider">                            
-                    </div>
-                </div>-->
-                <div class="navbar-end">
-                    <a th:href="@{/about}" class="navbar-item">
-                        About
-                    </a>
-                </div>
+
+                <a th:href="@{/about}" class="navbar-item">About</a>
             </div>
         </div>
     </nav>
