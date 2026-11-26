@@ -15,7 +15,7 @@ CIS-2232 Advanced Object-Oriented Programming
 | -------------------- | --------------- | -------------------------------------------------------------------------------------------------------------------- |
 | BA / Business Client | Kay Pitre       | Defines the project requirements, donation fields, reports, and visual colour. Reviews and approves the application. |
 | Developer            | Jose Villanueva | Builds the application and maintains this repository.                                                                |
-| Project Manager / QA | Steven Nguyen   | Tracks progress and verifies the application against the requirements.                                               |
+| Project Manager / QA | Joseph L   | Tracks progress and verifies the application against the requirements.                                               |
 
 ## Description
 
