@@ -83,8 +83,6 @@ If no donations match, the page will show a message saying no results were found
 
 GitHub is used to store the project code and track work through Issues. The repository should be public so the instructor and project team can access it.
 
-Repository: [Bottle Drive Log](https://github.com/jvillanuevarodriguez/cis2232_f26_project_villanueva_jose_bottledrive)
-
 ## Repository organization
 
 | Deliverable | Description | Location |
